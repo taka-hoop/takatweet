@@ -7,12 +7,14 @@
           <li>
             <%= link_to "詳細をみる", "/tweets/#{tweet.id}", method: :get %>
           </li>
+          <% if user_signed_in? && current_user.id == tweet.user_id %>
           <li>
             <%= link_to "編集する", "/tweets/#{tweet.id}/edit", method: :get %>
           </li>
           <li>
             <%= link_to "削除する", "/tweets/#{tweet.id}", method: :delete %>
           </li>
+          <% end %>
         </ul>
       </div>
       <%= simple_format(tweet.text) %>
