@@ -32,7 +32,7 @@ before_action :move_to_index, except: [:index, :show]
 
   private
   def tweet_params
-    params.require(:tweet).permit(:name, :image, :text)
+    params.require(:tweet).permit(:name, :image, :text).merge(user_id: current_user.id)
   end
 
   def set_tweet
