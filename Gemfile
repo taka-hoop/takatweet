@@ -6,7 +6,7 @@ ruby '2.5.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use mysql as the database for Active Record
-gem 'mysql2', '~> 0.4.10'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -65,3 +65,12 @@ gem 'compass-rails', '3.1.0'
 gem 'sprockets', '3.7.2'
 gem 'devise'
 gem 'kaminari'
+
+group :development, :test do
+  gem 'mysql2', '~> 0.4.10'
+end
+
+
+group :production do
+  gem 'pg'
+end

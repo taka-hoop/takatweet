@@ -48,7 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
+
+
   <<: *default
-  database: takatweet_production
-  username: takatweet
-  password: <%= ENV['TAKATWEET_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
